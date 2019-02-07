@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+  crossorigin="anonymous">
+<mat-toolbar color="primary">
+  <button mat-button [matMenuTriggerFor]="menu" class="menu">Categorias</button>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item routerLink="/categories/Transistores" routerLinkActive="mat-accent">Transistores</button>
+  <button mat-menu-item routerLink="/categories/Capacitores" routerLinkActive="mat-accent">Capacitores</button>
+  <button mat-menu-item routerLink="/categories/Herramientas" routerLinkActive="mat-accent">Herramientas</button>
+  <button mat-menu-item routerLink="/categories/Diodos" routerLinkActive="mat-accent">Diodos</button>
+  <button mat-menu-item routerLink="/" routerLinkActive="mat-accent">Todos</button>
+</mat-menu>
+<span class="spacer"></span>
+  <div *ngIf="!userIsAuthenticated">
+    <button mat-button routerLink="/signin" routerLinkActive="mat-accent">Sign In</button>
+  </div>
+      
+<div *ngIf="userIsAuthenticated">
+  <button mat-button [matMenuTriggerFor]="profile"><i class="fas fa-user"></i>{{userData.matricula}}</button>
+  <mat-menu #profile="matMenu">
+    <button mat-menu-item *ngIf="userIsAdmin" routerLink="/owner">Owner</button>
+    <button mat-menu-item *ngIf="!userIsAdmin" routerLink="/profile/pending" routerLinkActive="mat-accent" >Profile</button>
+    <mat-divider></mat-divider>
+    <button mat-menu-item (click)="onLogout()">Log Out</button>
+  </mat-menu>  
+</div>
+
+</mat-toolbar>

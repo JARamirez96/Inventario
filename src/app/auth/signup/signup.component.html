@@ -1,0 +1,31 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]="form" (submit)="onSavePost()" *ngIf="!isLoading">
+    <mat-form-field>
+      <!-- matInput type="text" formControlName="title" placeholder="Post Title"-->
+      <input matInput formControlName="email" type="email" placeholder="E-Mail" email>
+      <mat-error *ngIf="form.get('email').invalid">Ingresa un e-mail valido.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field *ngIf="isCreate()">
+      <input type="password" formControlName="password" matInput placeholder="Password" >
+      <mat-error *ngIf="form.get('password').invalid">Ingresa un password valido.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text" formControlName="matricula" matInput placeholder="Matricula" >
+      <mat-error *ngIf="form.get('matricula').invalid">Ingresa tu matricula.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text" formControlName="carrera" matInput placeholder="Carrera" >
+      <mat-error *ngIf="form.get('carrera').invalid">Ingresa tu carrera.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text" formControlName="name" matInput placeholder="Nombre" >
+      <mat-error *ngIf="form.get('name').invalid">Ingresa tu nombre.</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit" *ngIf="!isLoading">Continuar</button>
+  </form>
+</mat-card>

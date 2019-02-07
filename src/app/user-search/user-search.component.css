@@ -1,0 +1,49 @@
+main {
+  width: 80%;
+  margin: 1rem auto;
+}
+
+mat-form-field {
+  width: 100%;
+}
+
+mat-card {
+	margin-top: 10px;
+	width: 40%;
+}
+
+@media only screen and (max-width:817px){
+  mat-card{
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width:445px){
+  mat-card{
+    width: 80%;
+  }
+}
+
+@media only screen and (max-width:654px){
+  mat-card{
+    width: 55%;
+  }
+}
+
+@media only screen and (max-width:600px){
+  mat-card{
+    width: 70%;
+  }
+}
+
+@media only screen and (max-width:496px){
+  mat-card{
+    width: 87%;
+  }
+}
+
+@media only screen and (min-width:960px){
+  mat-card{
+    width: 50%;
+  }
+}

@@ -1,0 +1,24 @@
+mat-spinner {
+  margin: auto;
+}
+
+mat-card-content p,
+.mat-card-header{
+  text-align: center;
+}
+
+mat-card-actions{
+  margin-top: -10px;
+}
+
+.example-card.mat-card{
+  padding-top: 10px;
+}
+
+img{
+  margin-bottom: 2px;
+}
+
+figure.mat-figure{
+  padding: 100%;
+}

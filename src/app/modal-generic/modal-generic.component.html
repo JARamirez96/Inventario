@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+  crossorigin="anonymous">
+<h1 class="mensaje" mat-dialog-title style="
+    color:blue; 
+    text-align: center;
+    margin-bottom: 0;
+    size: 3x;
+    ">
+  <i class="fas fa-info-circle"></i>
+</h1>
+<div mat-dialog-content>
+  <p class="mat-body-1">{{ data?.message }}</p>
+</div>
+<div mat-dialog-actions>
+  <button style="
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-transform: uppercase;
+   " mat-button mat-dialog-close>Ok</button>
+</div>

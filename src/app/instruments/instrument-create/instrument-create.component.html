@@ -1,0 +1,36 @@
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form [formGroup]="form" (submit)="onSavePost()" *ngIf="!isLoading">
+    <mat-form-field>
+      <!-- matInput type="text" formControlName="title" placeholder="Post Title"-->
+      <input matInput formControlName="name" type="text" placeholder="Nombre">
+      <mat-error *ngIf="form.get('name').invalid">Ingresa un nombre valido.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="url" formControlName="instrumentImage" matInput placeholder="URL de la imagen">
+      <mat-error *ngIf="form.get('instrumentImage').invalid">Ingresa una URL valida.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="number" formControlName="cantidad" matInput placeholder="Cantidad">
+      <mat-error *ngIf="form.get('cantidad').invalid">Ingresa una cantidad.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <mat-select placeholder="Categoria" formControlName="category">
+        <mat-option *ngFor="let category of categories" [value]="category.name">
+          {{category.viewValue}}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('category').invalid">Ingresa la categoria.</mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+      <input type="text" formControlName="location" matInput placeholder="Ubicación del material">
+      <mat-error *ngIf="form.get('location').invalid">Ubicación invalida.</mat-error>
+    </mat-form-field>
+
+    <button class="centrado" mat-raised-button color="accent" type="submit" *ngIf="!isLoading">Registrar Instrumento</button>
+  </form>
+</mat-card>

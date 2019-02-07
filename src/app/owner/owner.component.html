@@ -1,0 +1,25 @@
+  <mat-sidenav-container class="sidenav-container">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar color="primary"><p>Menu</p></mat-toolbar>
+    <mat-nav-list>
+      <a mat-list-item routerLink="signup" routerLinkActive="mat-accent"><i class="far fa-plus-square"></i>Crear Usuario</a>
+      <a mat-list-item routerLink="usuarios" routerLinkActive="mat-accent"><i class="fas fa-users"></i>Buscar Usuario</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="solicitudes" routerLinkActive="mat-accent"><i class="far fa-envelope"></i>Solicitudes</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLink="instruments/creation" routerLinkActive="mat-accent"><i class="fas fa-hammer"></i>Crear Instrumento</a>
+      <a mat-list-item routerLink="instruments" routerLinkActive="mat-accent"><i class="fas fa-edit"></i>Editar Instrumento</a>
+      <a mat-menu-item routerLink="/" routerLinkActive="mat-accent"><i class="fas fa-search"></i>Ver Instrumentos</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <button mat-raised-button color="accent" (click)="drawer.toggle()">></button>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

@@ -1,0 +1,40 @@
+.sidenav-container {
+  height: 100%;
+}
+
+.sidenav {
+  width: 200px;
+  box-shadow: 3px 0 6px rgba(0,0,0,.24);
+}
+
+p{
+  margin-left: 33%;
+}
+.menu{
+  padding: 0;
+}
+
+a i.fa-plus-square{
+  margin-right:12px;
+}
+
+a i.fa-users{
+  margin-right:8.5px; 
+  margin-left: -3px;
+}
+
+a i.fa-envelope{
+  margin-right:10px;
+}
+
+a i.fa-hammer{
+  margin-right:8px;
+}
+
+a i.fa-edit{
+  margin-right:7.5px;
+}
+
+a i.fa-search{
+  margin-right:10.5px;
+}

@@ -1,0 +1,26 @@
+
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+button.menu{
+  margin-left: 15%;
+}
+
+button i{
+  margin-right: 10px;
+  margin-left: 0;
+  margin-bottom: 2px
+}

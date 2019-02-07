@@ -1,0 +1,15 @@
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/">
+<mat-card>
+  <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+    <mat-form-field>
+      <input matInput name="email" ngModel type="email" placeholder="E-Mail" #emailInput="ngModel" required email>
+      <mat-error *ngIf="emailInput.invalid">Acceder con un e-mail valido.</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <input type="password" name="password" ngModel matInput placeholder="Password" #passwordInput="ngModel" required>
+      <mat-error *ngIf="passwordInput.invalid">Acceder con un password valido.</mat-error>
+    </mat-form-field>
+    <button class="centrado" mat-raised-button color="accent" type="submit" *ngIf="!isLoading">Login</button>
+  </form>
+</mat-card>
